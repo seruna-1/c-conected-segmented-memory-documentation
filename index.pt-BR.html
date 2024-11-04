@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>Biblioteca de C para memória segmentada e conectada</title>
+
+		<meta charset="UTF-8" lang="pt-BR" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="../hanabi-css/main.css">
+
+	</head>
+
+	<body>
+
+		<main>
+
+			<p>Essa biblioteca é uma coleção de modulos para gerenciar memória segmentada.</p>
+
+			<p>O foco é facilitar o armazenamento de informação em setores de memória que possam estar separados, como alternativa ao armazenamento em um bloco contínuo (uma array).</p>
+
+			<h1>Armazenamento e referenciação em C</h1>
+
+			<p>Em C, informações são acessadas por meio de endereços, e os endereços são nomeados como variáveis. Por exemplo:</p>
+
+			<div class="scroll">
+
+				<p>int variable = 379;</p>
+
+			</div>
+
+			<p>[variable] é uma referência ao espaço na memória onde está armazenado o número [379]. O prefixo [int] é o tipo da variável.</p>
+
+			<p>Nesse caso, o termo [tipo] é análogo à [tamanho]. O tipo de uma variável é o tamanho do setor da memória que ela referencia.</p>
+
+			<p>Por exemplo, [int] corresponde à 4 bytes de memória, e é usado para armazenar números inteiros. Já o tipo [char] corresponde à 1 byte de memória, o que é suficiente para armazenar um caractere ASCII.</p>
+
+			<p>Cada tipo de informação é armazenado em um espaço específico, em bytes.</p>
+
+		</main>
+
+	</body>
+
+	<script src="../hanabi-css/main.js"></script>
+
+</html>
