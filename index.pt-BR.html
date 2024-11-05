@@ -17,27 +17,53 @@
 
 		<main>
 
-			<p>Essa biblioteca é uma coleção de modulos para gerenciar memória segmentada.</p>
+			<p>Essa biblioteca (Coseme) tem o foco de auxiliar o armazenamento de informação em setores de memória que possam estar separados, como alternativa ao armazenamento em série (array).</p>
 
-			<p>O foco é facilitar o armazenamento de informação em setores de memória que possam estar separados, como alternativa ao armazenamento em um bloco contínuo (uma array).</p>
+			<h1>Variáveis e referenciação em C</h1>
 
-			<h1>Armazenamento e referenciação em C</h1>
-
-			<p>Em C, informações são acessadas por meio de endereços, e os endereços são nomeados como variáveis. Por exemplo:</p>
+			<p>Em C, informações são acessadas por meio de endereços, e os endereços podem ser são nomeados. Por exemplo:</p>
 
 			<div class="scroll">
 
-				<p>int variable = 379;</p>
+				<p>int some_number = 379;</p>
 
 			</div>
 
-			<p>[variable] é uma referência ao espaço na memória onde está armazenado o número [379]. O prefixo [int] é o tipo da variável.</p>
+			<p>[some_number] é uma uma variável, o nome de uma referência ao espaço na memória onde está armazenado o número [379].</p>
 
-			<p>Nesse caso, o termo [tipo] é análogo à [tamanho]. O tipo de uma variável é o tamanho do setor da memória que ela referencia.</p>
+			<p>O prefixo [int] é o tipo da variávelNesse caso, o termo [tipo] é análogo à [tamanho]. O tipo de uma variável é o tamanho do setor da memória que ela referencia.</p>
 
 			<p>Por exemplo, [int] corresponde à 4 bytes de memória, e é usado para armazenar números inteiros. Já o tipo [char] corresponde à 1 byte de memória, o que é suficiente para armazenar um caractere ASCII.</p>
 
 			<p>Cada tipo de informação é armazenado em um espaço específico, em bytes.</p>
+
+			<p>Ao acessarmos a informação referenciada por essa variável, o computador saberá, a partir do tipo que foi declarado ([int], no caso), quanto de memória considerar.</p>
+
+			<h1>Array</h1>
+
+			<p>Array, em C, é uma região na memória dividida em segmentos de mesmo tipo (mesmo tamanho).</p>
+
+			<div class="scroll">
+
+				<p>int numbers[3] = { 379, 32, 41 };</p>
+
+				<p>int characters[6] = { 'H', 'e', 'l', 'l', 'o', NULL };</p>
+
+			</div>
+
+			<p>[numbers] é uma array do tipo [int]. Mais especificamente, é o nome do endereço de uma região na memória que consiste numa sequência de blocos menores, todos do tipo [int].</p>
+
+			<p>A mesma lógica se aplica à array [characters], com blocos são do tipo [char].</p>
+
+			<p>Em qualquer dos casos, os blocos estão um ao lado do outro. Se o primeiro elemento da array [characters] está no byte 1 da memória, o segundo estará no byte 2, o terceiro no byte três e assim por diante. No caso da array [numbers], se o primeiro elemento começar no byte 1, o segundo começará no byte 5, e o terceiro começará no byte 9 (o tipo [int] corresponde à 4 bytes).</p>
+
+			<h1>Coseme</h1>
+
+			<p>A intenção dessa biblioteca é implementar, em C, uma forma de armazenar uma informação em regiões que não precisam estar lado a lado, na memória, sem que a integridade seja perdida. Essas partes estão conectadas, no sentido de que cada parte tem, junto à uma parcela da informação principal, a localização da parte anterior e da parte posterior. Essa estrutura tamém é conhecida como uma lista conectada, porque é uma sequência de elementos ligados entre si.</p>
+
+			<p>Esse modelo de memória existe em diversas linguagem de programação interpretadas, como Python, e até em linguagens compiladas, como o C++. Aqui, essa idéia é implementa em uma classe central, o [pasu], que significa [caminho], em japonês, porque as partes conectadas de uma informação segmentada formam uma trilha.</p>
+
+			<p>A funcionalidade esperada do [pasu] é a mesma funcionalidade esperada do [vetor] de C++. A semelhança reside no [pasu], assim como essa outra abstração, ter um tipo definido de elemento. Isso significa que cada segmento conectado tem exatamente o mesmo tamanho.</p>
 
 		</main>
 
