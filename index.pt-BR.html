@@ -65,6 +65,40 @@
 
 			<p>A funcionalidade esperada do [pasu] é a mesma funcionalidade esperada do [vetor] de C++. A semelhança reside no [pasu], assim como essa outra abstração, ter um tipo definido de elemento. Isso significa que cada segmento conectado tem exatamente o mesmo tamanho.</p>
 
+			<h1>list_node_connect</h1>
+
+			<p>Recebe dois nodes de entrada e os conecta.</p>
+
+			<p>Parâmetros:</p>
+
+			<ul>
+
+				<li>void* node_1</li>
+
+				<li>void* node_2</li>
+
+			</ul>
+
+			<p>O campo [next] do [node_1] será definido como o endereço do [node_2] e o campo [previous] do [node_2] será o endereço do [node_1].</p>
+
+			<p>Tanto [node_1] quanto [node_2] podem ser [NULL].</p>
+
+			<p>Caso [node_1] seja NULL e [node_2] não seja, apenas o [node_2] tem seu campo alterado.</p>
+
+			<p>Caso [node_1] e [node_2] sejam [NULL], nada é feito.</p>
+
+			<h1>list_node_get_field_previous</h1>
+
+			<p>Return type: [void**]</p>
+
+			<p>Returns the adress to the region of [node] that contains the adress of its previous node.</p>
+
+			<h1>list_node_get_field_previous</h1>
+
+			<p>Return type: [void**]</p>
+
+			<p>Returns the adress to the region of [node] that contains the adress of its next node.</p>
+
 		</main>
 
 	</body>
